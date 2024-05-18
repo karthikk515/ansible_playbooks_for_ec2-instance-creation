@@ -5,7 +5,7 @@
   - name:   launching AWS instance using Ansible
     amazon.aws.ec2_instance:
       key_name: califo
-      region: us-west-1
-      instance_type: t2.micro
-      image_id: ami-0cbe318e714fc9a82
+      region: us-west-1 #You can enter the region where you want to launch the instance
+      instance_type: t2.micro #Enter the instance_type you want launch
+      image_id: ami-0cbe318e714fc9a82 #Provide image id
 ...
