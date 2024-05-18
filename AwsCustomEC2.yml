@@ -1,0 +1,17 @@
+---
+  - hosts: localhost
+    become: true
+    gather_facts: no
+    tasks:
+     - name: Launching a new customize  EC2 instance
+       amazon.aws.ec2_instance:
+        name: "Ansible_Instance"  # Provide Instance name
+        image_id: "ami-0cbe318e714fc9a82"  # Enter AMI ID
+        region: "us-west-1" #Enter the region where you want to launch the instancr
+        instance_type: "t2.micro"  # Enter Instance type
+        key_name: "califo"  # SSH key name
+        security_group: "sg-06ba198c93574c629"  # Enter your security group name 
+        vpc_subnet_id: "subnet-01561b5cffa157d4b"  # VPC subnet ID (optional)
+        tags:
+         Name: "Ansible-Provisioned-Instance"  # Tag for identification
+... 
