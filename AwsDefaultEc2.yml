@@ -1,0 +1,11 @@
+---
+- name: Launch EC2 Instance on california region
+  hosts: localhost
+  tasks:
+  - name:   launching AWS instance using Ansible
+    amazon.aws.ec2_instance:
+      key_name: califo
+      region: us-west-1
+      instance_type: t2.micro
+      image_id: ami-0cbe318e714fc9a82
+...
