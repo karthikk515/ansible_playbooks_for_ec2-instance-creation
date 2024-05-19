@@ -11,13 +11,6 @@
         key_name: "califo"  # SSH key name
         security_group_ids: 
           - "sg-00f34d06c554707cb" # Security group name (optional)
-        # Additional parameters (optional)
-        # - associate_public_ip_address: yes
-        # - block_devices:
-        #   - device_name: /dev/sda1
-        #     ebs:
-        #       volume_size: 10
-        #       volume_type: gp2
     - debug:
         msg: "Launch template  is created successfully!"
 ...
