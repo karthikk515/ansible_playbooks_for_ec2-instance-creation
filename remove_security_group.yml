@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  gather_facts: no
+  vars:
+    security_group_ids:
+      - sg-0416de5edb062dc4c # Replace your sg ids
+      - sg-0b361432036ecc7cb
+  tasks:
+    - name: Delete security group
+      ec2_group:
+        state: absent
+        group_id: "{{ item }}"
+        region: us-west-1 # Replace with your region
+      loop: "{{ security_group_ids }}"
+      register: delete_result
+
+    - name: Print result
+      debug:
+        var: delete_result
+...
