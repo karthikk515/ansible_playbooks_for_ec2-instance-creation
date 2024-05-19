@@ -1,0 +1,23 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Create a new launch template
+      community.aws.ec2_launch_template:
+        name: "My_Launch_Template"  # Name for the launch template
+        image_id: "ami-0cbe318e714fc9a82"  # AMI ID
+        instance_type: "t2.micro"  # Instance type
+        key_name: "califo"  # SSH key name
+        security_group_ids: 
+          - "sg-00f34d06c554707cb" # Security group name (optional)
+        # Additional parameters (optional)
+        # - associate_public_ip_address: yes
+        # - block_devices:
+        #   - device_name: /dev/sda1
+        #     ebs:
+        #       volume_size: 10
+        #       volume_type: gp2
+    - debug:
+        msg: "Launch template  is created successfully!"
+...
