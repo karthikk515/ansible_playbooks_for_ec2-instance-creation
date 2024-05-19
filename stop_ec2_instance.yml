@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Playbook to stop the running instance
+      amazon.aws.ec2_instance:
+        state: stopped 
+        region: us-west-1 # Replace with your region that you want to stop the instance
+        instance_ids: i-067273be169d7718b # Replacce with your instance id which you want to stop
+...
