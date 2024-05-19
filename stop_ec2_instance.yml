@@ -4,7 +4,7 @@
   tasks:
     - name: Playbook to stop the running instance
       amazon.aws.ec2_instance:
-        state: stopped 
+        state: stopped # You can provide here start too start your ec2 instance  
         region: us-west-1 # Replace with your region that you want to stop the instance
         instance_ids: i-067273be169d7718b # Replacce with your instance id which you want to stop
 ...
