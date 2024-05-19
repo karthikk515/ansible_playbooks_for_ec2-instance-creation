@@ -1,0 +1,21 @@
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: example using security group rule descriptions
+      amazon.aws.ec2_security_group:
+        name: RK_SG #Replace with your Security Group name
+        description: Allow SSH and HTTP 
+        vpc_id: vpc-0f3568218b4090d2b #Replace with your VPC id
+        rules:
+          - proto: tcp
+            ports:
+              - 80
+            cidr_ip: 0.0.0.0/0
+            rule_desc: allow all on port 80
+          - proto: tcp
+            ports:
+              - 22
+            cidr_ip: 0.0.0.0/0
+            rule_desc: allow all on port 22
+...
